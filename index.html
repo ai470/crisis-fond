@@ -250,6 +250,7 @@
       align-items: flex-end;
       justify-content: center;
       height: 100%;
+      position: relative;
     }
 
     .hero-photo {
@@ -611,7 +612,7 @@
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-light);
+      color: var(--text-mid);
       margin-bottom: 16px;
     }
 
@@ -1398,6 +1399,93 @@
       text-align: left;
       font-weight: 500;
     }
+
+    /* ── HERO FLOAT CARD ── */
+    .hero-float-card {
+      position: absolute;
+      bottom: 40px;
+      left: -40px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: center;
+      width: min(100%, 310px);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 999px;
+      padding: 14px 20px 14px 16px;
+      background: rgba(1, 38, 56, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 18px 42px rgba(1, 38, 56, 0.32);
+      animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.55s backwards,
+                 cardFloat 6s ease-in-out 1.5s infinite;
+      z-index: 10;
+    }
+
+    .float-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #FE973F;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .float-svg {
+      width: 22px;
+      height: 22px;
+      color: #fff;
+      stroke: currentColor;
+    }
+
+    .hero-float-card strong {
+      display: block;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 800;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    .hero-float-card p {
+      margin: 3px 0 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 11px;
+      font-weight: 600;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes cardFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-float-card {
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 
@@ -1433,7 +1521,18 @@
       </div>
 
       <div class="hero-photo-wrap">
-        <img src="tatyana_hero.png" alt="Татьяна Волкова" class="hero-photo">
+        <img src="tatyana_hero.png" alt="Татьяна Волкова — эксперт по формированию личного капитала" class="hero-photo">
+        <div class="hero-float-card">
+          <span class="float-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="float-svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </span>
+          <div>
+            <strong>Татьяна Волкова</strong>
+            <p>эксперт по формированию личного капитала</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
