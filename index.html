@@ -1123,7 +1123,14 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      overflow: hidden;
       background: var(--coral);
+    }
+    .social-icon-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
     .social-card-title {
       font-size: 14px;
@@ -1706,7 +1713,7 @@
     <div class="social-grid">
       <a href="https://vk.com/volkovacapital" class="social-card" target="_blank">
         <div class="social-icon-box">
-          <img src="vk.svg" alt="VK" style="width:24px;height:24px;">
+          <img src="vk.svg" alt="VK">
         </div>
         <div>
           <p class="social-card-title">ВКонтакте</p>
@@ -1736,7 +1743,7 @@
 
       <a href="https://max.ru/volkovacapital" class="social-card" target="_blank">
         <div class="social-icon-box">
-          <img src="max.svg" alt="Max" style="width:24px;height:24px;">
+          <img src="max.svg" alt="Max">
         </div>
         <div>
           <p class="social-card-title">MAX канал</p>
